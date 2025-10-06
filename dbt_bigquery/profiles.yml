@@ -1,0 +1,19 @@
+dbt_bigquery:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: seventh-league--n0
+      dataset: raw_dev
+      threads: 4
+      keyfile: "\\Code\\dbt\\dbt_bigquery\\seventh-league-474004-n0-db44a63088b2.json"
+      location: asia-southeast2
+
+    prod:
+      type: bigquery
+      method: oauth
+      project: seventh-league--n0
+      dataset: raw_prod
+      threads: 4
+      location: asia-southeast2
